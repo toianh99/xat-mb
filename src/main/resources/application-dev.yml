@@ -1,0 +1,21 @@
+spring:
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        default_schema: hcm_blog
+        use-new-id-generator-mappings: false
+        jdbc:
+          lob:
+            non_contextual_creation: true
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://172.16.101.39:5432/nspace?stringtype=unspecified
+    username: xdp
+    password: gjEyCJRruMz28kw96OWXy5JBN9pOROXT
+
+server:
+  port: 8081

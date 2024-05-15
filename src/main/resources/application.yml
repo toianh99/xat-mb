@@ -1,0 +1,36 @@
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  jackson:
+    date-format: "yyyy-MM-dd'T'HH:mm:ssZ"
+    time-zone: "Asia/Ho_Chi_Minh"
+    default-property-inclusion: non_null
+  application:
+    name: blog
+  profiles:
+    active: dev
+  servlet:
+    multipart:
+      enabled: true
+      file-size-threshold: 2KB
+      max-file-size: 20MB
+      max-request-size: 200MB
+  messages:
+    basename: language/message
+    encoding: UTF-8
+    cache-duration: -1
+hibernate:
+  id:
+    new_generator_mappings: false
+  hbm2ddl:
+    auto: update
+  show-sql: true
+  listeners:
+    envers:
+      autoRegister: true
+  envers:
+    autoRegisterListeners: true
+org:
+  hibernate:
+    envers:
+      audit_table_suffix: _aud
