@@ -1,5 +1,6 @@
-package com.mb.cap.blog.entity;
+package com.mb.cap.blog.auth.entity;
 
+import com.mb.cap.blog.entity.BaseEntity;
 import com.mb.cap.blog.utils.IdUtil;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -13,11 +14,14 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "user", indexes = {
+@Table(name = "xat_user", indexes = {
         @Index(name = "user_idx", columnList = "username, email, phone")
 })
 @Getter
@@ -39,7 +43,8 @@ public class User extends BaseEntity implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return null;
+        Set<GrantedAuthority> authorities = new HashSet();
+        return authorities;
     }
 
     @Override

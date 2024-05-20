@@ -1,5 +1,6 @@
-package com.mb.cap.blog.entity;
+package com.mb.cap.blog.auth.entity;
 
+import com.mb.cap.blog.entity.BaseEntity;
 import com.mb.cap.blog.utils.IdUtil;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -10,7 +11,7 @@ import lombok.Setter;
 import org.springframework.security.core.GrantedAuthority;
 
 @Entity
-@Table(name = "role", indexes = {
+@Table(name = "xat_role", indexes = {
         @Index(name = "role_idx", columnList = "name, code")
 })
 @Getter
